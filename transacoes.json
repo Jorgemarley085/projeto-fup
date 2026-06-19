@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1,
+    "description": "ps5",
+    "value": 2500.5,
+    "type": "despesa",
+    "category": "Outros",
+    "date": "2026-06-19 15:41:47.206375"
+  },
+  {
+    "id": 2,
+    "description": "renda",
+    "value": 1550.8,
+    "type": "receita",
+    "category": "Sal\u00e1rio",
+    "date": "2026-06-19 15:41:47.206375"
+  },
+  {
+    "id": 3,
+    "description": "cama",
+    "value": 1300.99,
+    "type": "despesa",
+    "category": "Moradia",
+    "date": "2026-06-19 15:41:47.206375"
+  },
+  {
+    "id": 4,
+    "description": "extra",
+    "value": 500.0,
+    "type": "receita",
+    "category": "Investimento",
+    "date": "2026-06-19 15:41:47.206375"
+  },
+  {
+    "id": 5,
+    "description": "extra",
+    "value": 3500.0,
+    "type": "receita",
+    "category": "Investimento",
+    "date": "2026-06-19 15:50:06.396852"
+  }
+]
