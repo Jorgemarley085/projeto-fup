@@ -26,17 +26,9 @@
   {
     "id": 4,
     "description": "extra",
-    "value": 500.0,
+    "value": 1550.5,
     "type": "receita",
     "category": "Investimento",
     "date": "2026-06-19 15:41:47.206375"
-  },
-  {
-    "id": 5,
-    "description": "extra",
-    "value": 3500.0,
-    "type": "receita",
-    "category": "Investimento",
-    "date": "2026-06-19 15:50:06.396852"
   }
 ]

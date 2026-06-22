@@ -9,7 +9,7 @@ convert = str(agora)
 #aqui estou adicionando uma transação e como parametro estou passando a lista de transações
 def addTransaction(transactions):
     #para usuario nao colocar id repetidos resolvi deixar id incrementado 
-    # onde verifico se a lista esta vazia se fazia o id recebe se nao tiver
+    # onde verifico se a lista esta vazia se vazia o id recebe  1 se nao tiver
     #ai pego o ultimo id atraves do ultimo indice [-1] e adiciono mais 1
     if not transactions:
         novo_id=1
@@ -37,7 +37,7 @@ def addTransaction(transactions):
         transaction_type=""
 
         while True:
-            #aqui decici deixar que usuario so selecione e nao digite o tipo da transação assim verificando se a entrada ou é 1 ou 2
+            #aqui decidi deixar que usuario so selecione e nao digite o tipo da transação assim verificando se a entrada ou é 1 ou 2
             first_type = int(input("INSIRA SE É RECEITA DIGITE-> 1 SE DESPESA DIGITE ->2::    "))
             if first_type==1:
                 transaction_type= "receita"
@@ -118,7 +118,7 @@ def addTransaction(transactions):
 #aqui calculo o total das despesas atraves do for acessando chave valor e somando "value" na variavel tot_despesa
 def total_expense(transactions):
     tot_despesa=0
-    for transaction in transactions: # aqui eu pego cada categorya despesa e adiciono o valor ao tot_despesa
+    for transaction in transactions: # aqui eu pego cada tipo despesa e adiciono o valor ao tot_despesa
         if transaction["type"] =="despesa":
             tot_despesa+=transaction['value']
          
@@ -146,6 +146,7 @@ def findTransaction(entrada,transactions):
             # break
             
     return False
+#aqui retorono todas as transaçoes inseridas para que usuario veja detalhes nos quais possa querer alterar
 def showTransactions(transactions):
     for transaction in transactions:
         print("---"*20)
@@ -156,7 +157,7 @@ def showTransactions(transactions):
         print("category:{}".format(transaction['category']))
         print("date: {}".format(transaction['date']))
         print("---"*20)
-        
+#aqui removo a transação usando tambem a função de procurar id, se id achado, excluo o indice onde esta toda a transação
 def removeTransaction(entrada,transactions):
     verication = findTransaction(entrada,transactions)
     if verication:
@@ -168,7 +169,8 @@ def removeTransaction(entrada,transactions):
                 break
     else:
         print("ID nao encontrado ")        
-
+#aqui atualizo a transação pelo id lido e validado pela função findTransactions
+#se validado pergunto o que usuario ira atualizar, utilizo a mesma logica  da função de adicionar transaçao, com uma diferença que atualizo somente um campo 
 def upgradeTransactions(entrada,transactions):
     find  = findTransaction(entrada,transactions)
     if find:
@@ -279,7 +281,7 @@ def upgradeTransactions(entrada,transactions):
         print("nao encontrado")    
 
         
-
+#aqui estou salvando as transações feitas pelo usuario 
 def saveTransactions(transactions):
     print("salvando")
     send = open('transacoes.json', 'w',encoding='utf-8') 
@@ -288,6 +290,9 @@ def saveTransactions(transactions):
     send.write(dados)
     send.close()
     print(dados)
+
+#aqui essa função esta carregando o arquivo transacoes.json,primiero tentando abrir o arquivo e fecha-lo e retornando o que foi lido e armazena na transactions
+#se o arquivo estiver vazio ele retorna uma lista vazia
 
 def loadTransactions():
     try:
