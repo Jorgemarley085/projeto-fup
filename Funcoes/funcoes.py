@@ -177,103 +177,102 @@ def upgradeTransactions(entrada,transactions):
         try:
             option = int(input("Deseja alterar valor digite ->(1) ou o tipo de transação digite->(2) ou alterar categoria digite ->(3) : "))
             for i in range(len(transactions)):
-                if option ==1:
-                    if entrada ==transactions[i]['id']:
-                        transactions[i]['value'] = float(input("coloque o valor novo: "))
-                        break
-                elif option==2:
-                    #aqui aproveitei o codigo da função adicionar transação
-                    if entrada ==transactions[i]['id']:
-                        transaction_type=""
+                if entrada ==transactions[i]['id']:
+                    if option ==1:
+                            transactions[i]['value'] = float(input("coloque o valor novo: "))
+                            break
+                    elif option==2:
+                        #aqui aproveitei o codigo da função adicionar transação
+                            transaction_type=""
 
-                        while True:
+                            while True:
+
+                                    first_type = int(input("INSIRA SE É RECEITA DIGITE-> 1 SE DESPESA DIGITE ->2::    "))
+                                    if first_type==1:
+                                        transaction_type= "receita"
+                                        transactions[i]['type'] = transaction_type
+                                        print("atualização concluida!!")
+                                        break
                             
-                            first_type = int(input("INSIRA SE É RECEITA DIGITE-> 1 SE DESPESA DIGITE ->2::    "))
-                            if first_type==1:
-                                transaction_type= "receita"
-                                transactions[i]['type'] = transaction_type
-                                print("atualização concluida!!")
-                                break
-                    
-                                
-                            elif first_type==2:
-                                transaction_type="despesa"
-                                transactions[i]['type'] = transaction_type
-                                print("atualização concluida!!")
-                                
-                                break
-                            print("opção invalida digite 1 ou 2")
-                elif option==3:
-                        caterogy = ""
-                        while True:
-                            print('''
-                                
-                    -----------CATEGORIA ---------------
-                                
-                                Alimentação (1)
-                                Transporte  (2)
-                                Moradia     (3)
-                                Lazer       (4)
-                                Saúde       (5)
-                                Educação    (6)
-                                Salário     (7)
-                                Investimento (8)
-                                Outros      (9)
-                    --------------------------------------------
-                    
-                            ''') 
-                            entrada = int(input("escolha uma opçao: "))
-                            if entrada <=0 or entrada>9:
-                                print("digite uma opção valida")  
-                            else:
-                                if entrada == 1:
-                                    caterogy="Alimentação"
-                                    transactions[i]['category'] = caterogy
-                                    print("atualização concluida!!")
-                                    break 
-                                if  entrada == 2:
-                                    caterogy="Transporte"
-                                    transactions[i]['category'] = caterogy
-                                    print("atualização concluida!!")
-                                    break 
-                                if entrada ==3:
-                                    caterogy="Moradia"
-                                    transactions[i]['category'] = caterogy
-                                    print("atualização concluida!!")
-                                    break 
-                                if entrada ==4:
-                                    caterogy="Lazer"
-                                    transactions[i]['category'] = caterogy
-                                    print("atualização concluida!!")
-                                    break 
-                                if entrada ==5:
-                                    caterogy="Saúde"
-                                    transactions[i]['category'] = caterogy
-                                    print("atualização concluida!!")
-                                    break 
+                                        
+                                    elif first_type==2:
+                                        transaction_type="despesa"
+                                        transactions[i]['type'] = transaction_type
+                                        print("atualização concluida!!")
+                                        
+                                        break
+                                    print("opção invalida digite 1 ou 2")
+                    elif option==3:
+                                caterogy = ""
+                                while True:
+                                    print('''
+                                        
+                            -----------CATEGORIA ---------------
+                                        
+                                        Alimentação (1)
+                                        Transporte  (2)
+                                        Moradia     (3)
+                                        Lazer       (4)
+                                        Saúde       (5)
+                                        Educação    (6)
+                                        Salário     (7)
+                                        Investimento (8)
+                                        Outros      (9)
+                            --------------------------------------------
+                            
+                                    ''') 
+                                    entrada2 = int(input("escolha uma opçao: "))
+                                    if entrada2 <=0 or entrada2>9:
+                                        print("digite uma opção valida")  
+                                    else:
+                                        if entrada2 == 1:
+                                            caterogy="Alimentação"
+                                            transactions[i]['category'] = caterogy
+                                            print("atualização concluida!!")
+                                            break 
+                                        elif  entrada2 == 2:
+                                            caterogy="Transporte"
+                                            transactions[i]['category'] = caterogy
+                                            print("atualização concluida!!")
+                                            break 
+                                        elif entrada2 ==3:
+                                            caterogy="Moradia"
+                                            transactions[i]['category'] = caterogy
+                                            print("atualização concluida!!")
+                                            break 
+                                        elif entrada2 ==4:
+                                            caterogy="Lazer"
+                                            transactions[i]['category'] = caterogy
+                                            print("atualização concluida!!")
+                                            break 
+                                        elif entrada2 ==5:
+                                            caterogy="Saúde"
+                                            transactions[i]['category'] = caterogy
+                                            print("atualização concluida!!")
+                                            break 
 
-                                if entrada ==6:
-                                    caterogy="Educação"
-                                    transactions[i]['category'] = caterogy
-                                    print("atualização concluida!!")
-                                    break 
-                                if entrada ==7:
-                                    caterogy="Salário"
-                                    transactions[i]['category'] = caterogy
-                                    print("atualização concluida!!")
-                                    break 
-                                if entrada ==8:
-                                    caterogy="Investimento"
-                                    transactions[i]['category'] = caterogy
-                                    print("atualização concluida!!")
-                                    break 
-                                if entrada ==9:
-                                    caterogy="Outros"  
-                                    transactions[i]['category'] = caterogy
-                                    print("atualização concluida!!")
-                                    break 
+                                        elif entrada2 ==6:
+                                            caterogy="Educação"
+                                            transactions[i]['category'] = caterogy
+                                            print("atualização concluida!!")
+                                            break 
+                                        elif entrada2 ==7:
+                                            caterogy="Salário"
+                                            transactions[i]['category'] = caterogy
+                                            print("atualização concluida!!")
+                                            break 
+                                        elif entrada2 ==8:
+                                            caterogy="Investimento"
+                                            transactions[i]['category'] = caterogy
+                                            print("atualização concluida!!")
+                                            break 
+                                        elif entrada2 ==9:
+                                            caterogy="Outros"  
+                                            transactions[i]['category'] = caterogy
+                                            print("atualização concluida!!")
+                                            break 
 
-
+                                  
                                             
         except ValueError:
             print("insira  1 ou 2 ou 3")            
@@ -285,7 +284,7 @@ def upgradeTransactions(entrada,transactions):
 def saveTransactions(transactions):
     print("salvando")
     send = open('transacoes.json', 'w',encoding='utf-8') 
-    dados = json.dumps(transactions, indent=2)
+    dados = json.dumps(transactions, indent=2)#transformo a lista com os dicionarios em json
     #indent usado para deixar o formato do json mais bonito
     send.write(dados)
     send.close()
